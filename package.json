@@ -2,7 +2,6 @@
   "name": "git-upgrade",
   "version": "1.0.0",
   "description": "Utility to upgrade your npm dependencies",
-  "main": "scripts/index.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
