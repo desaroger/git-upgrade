@@ -1,0 +1,26 @@
+{
+  "name": "git-upgrade",
+  "version": "1.0.0",
+  "description": "Utility to upgrade your npm dependencies",
+  "main": "scripts/index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desaroger/git-upgrade.git"
+  },
+  "keywords": [
+    "git",
+    "npm",
+    "upgrade"
+  ],
+  "author": "Roger Fos Soler (desaroger23@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desaroger/git-upgrade/issues"
+  },
+  "homepage": "https://github.com/desaroger/git-upgrade#readme"
+}
