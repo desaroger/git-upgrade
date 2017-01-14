@@ -1,6 +1,31 @@
 #!/bin/bash
+
+function checkHttpStatus {
+    status=$(curl --write-out %{http_code} --silent --output /dev/null "$1")
+    [ "$status" == "200" ]
+    return
+}
+
+if [ $# -ne 1 ]; then
+    echo Usage: git-upgrade [repository]
+    echo Example: git-upgrade desaroger@loopback-i18n
+    exit 1
+fi
+
+if [[ $1 != *"@"* ]]; then
+  echo "Invalid repository. Format: [user]@[repo]"
+  echo Example: git-upgrade desaroger@loopback-i18n
+  exit 1
+fi
+
 repo=$1
+githubUrl="https://github.com/${repo/@//}"
 url="git@github.com:${repo/@//}.git"
+
+if ! checkHttpStatus $githubUrl; then
+    echo "Repository not found [not 200 response]"
+    exit 1
+fi
 
 cd /var/tmp
 
